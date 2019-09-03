@@ -42,8 +42,15 @@
                 currentFilter: 'active'
             }
         },
+        
         computed:{
-             filteredTodoList:function(){
+            // todoList:function(){
+
+            // },
+            // currentFilter:function(){
+
+            // },
+            filteredTodoList:function(){
                   console.log(this.todoList,this.currentFilter);  
                   let filteredList=[];
                   for (let index = 0; index <this.todoList.length; index++) {
