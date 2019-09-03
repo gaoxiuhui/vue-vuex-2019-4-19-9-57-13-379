@@ -9,11 +9,11 @@
 <script>
     export default {
         name: 'create-form',
-        data:function(){
-                return{
-                    inputingText:""
-                }
-        },
+        computed:{
+            inputingText:function(){
+                  return this.$store.state.inputingText;
+            },
+        },    
         methods:{
                  handleChange:function(event){              
                     this.inputingText=event.target.value; 

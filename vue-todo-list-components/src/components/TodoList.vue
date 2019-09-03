@@ -18,14 +18,7 @@
         },
         methods:{
             changeStatus:function(item){
-              if(!item.checked){
-                  item.status='completed';
-                  item.checked = true;
-                  } 
-              else{ 
-                  item.status='active';
-                  item.checked=false;
-                  };
+            this.$store.commit("changeStatus",item);
               this.$emit("changeStatus",item);
           }  
         }

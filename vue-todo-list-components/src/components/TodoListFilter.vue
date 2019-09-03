@@ -9,15 +9,11 @@
 <script>
     export default {
          name: 'TodoListFilter',
-         data:function(){
-             return {
-                actived:''
-             }
-         },
+         
          methods:{
                  handleStatusUpdate:function(status){              
                     this.$emit("handleStatusUpdate",status); 
-                    this.actived = status;
+                    this.$store.commit(" handleStatusUpdate",status);
                 },              
         }
     }
