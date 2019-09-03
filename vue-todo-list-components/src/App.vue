@@ -7,7 +7,7 @@
         <!-- 引用子组件 addNewTodo是子组件中定义的，addTodoList是方法 -->
            <CreateForm @addNewTodo="addTodoList"></CreateForm>
         <!-- todoList列表 -->
-        <TodoList :filteredTodoList=" filteredTodoList"></TodoList>
+        <TodoList :filteredTodoList=" filteredTodoList" @changeStatus="updateList"></TodoList>
         <!-- filter 过滤器 -->
          当前状态：{{currentFilter}}
         <TodoListFilter @handleStatusUpdate="handleStatusUpdate"></TodoListFilter> 
@@ -65,7 +65,14 @@
             },
             handleStatusUpdate:function(status){
                  this.currentFilter=status;
-            },        
+            },  
+            updateList:function(item){
+                  this.todoList.forEach(element=>{
+                    if(element.content==item.content){
+                      element.status=item.status;
+                    }
+                  })
+            }       
         }
     }
 </script>
